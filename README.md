@@ -1,10 +1,11 @@
 ![Python](https://img.shields.io/badge/Python-3.9-blue)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
-![Last Commit](https://img.shields.io/github/last-commit/AndyWu147/STEM-major-salaries-analysis)
 # U.S. College ROI: Analyzing Earnings vs Tuition Using Scorecard Data
+
 **Built With:**  
 Python · Pandas · NumPy · Matplotlib · Seaborn · Jupyter · Git
+
 
 ## 1. Overview  
 This project analyzes the **Return on Investment (ROI)** of U.S. colleges using data from the Department of Education’s College Scorecard.  
