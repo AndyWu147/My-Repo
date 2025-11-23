@@ -1,123 +1,90 @@
-U.S. College ROI Analysis (College Scorecard Dataset)
-1. Project Overview
+![Python](https://img.shields.io/badge/Python-3.9-blue)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![Last Commit](https://img.shields.io/github/last-commit/AndyWu147/STEM-major-salaries-analysis)
+# U.S. College ROI: Analyzing Earnings vs Tuition Using Scorecard Data
+**Built With:**  
+Python · Pandas · NumPy · Matplotlib · Seaborn · Jupyter · Git
 
-This project analyzes the financial return on investment (ROI) of U.S. colleges using data from the U.S. Department of Education’s College Scorecard.
-I measure early-career earnings relative to tuition cost, compare ROI across school types, states, and STEM dominance, and identify which institutions deliver the strongest economic value for students.
+## 1. Overview  
+This project analyzes the **Return on Investment (ROI)** of U.S. colleges using data from the Department of Education’s College Scorecard.  
+It evaluates how tuition costs relate to early-career earnings across institutions, school types, and student demographics.
 
-2. Key Features
+## 2. What This Project Covers  
+- Cleaned and merged College Scorecard earnings and institution datasets  
+- Calculated ROI for in-state and out-of-state students  
+- Labeled schools by STEM focus using the Field-of-Study dataset  
+- Created 9 visualizations on ROI distribution, gender/income gaps, school types, tuition–earnings link  
+- Produced insights to support families, policymakers, and researchers
 
-Cleaned and merged College Scorecard institution and earnings datasets
+## 3. Getting Started
 
-Calculated in-state and out-of-state ROI metrics
+Clone the repo and install the required libraries.
 
-Labeled schools as STEM or non-STEM using the Field-of-Study dataset
+**Steps:**  
+1. Clone the repository:  
+   `git clone https://github.com/AndyWu147/STEM-major-salaries-analysis.git`  
+   `cd STEM-major-salaries-analysis`  
 
-Generated eight visualizations covering ROI distribution, gender gaps, school type differences, and more
+2. Install dependencies (Python 3.9+):  
+   `pip install pandas numpy matplotlib`  
 
-Produced actionable insights interpretable by students, parents, and policymakers
+3. Open the notebook:  
+   Open `notebooks/stem_salaries_analysis.ipynb` in Jupyter and run all cells.  
 
-3. Data Sources
+You can also view the notebook directly on GitHub [here](notebooks/stem_salaries_analysis.ipynb).
 
-Most Recent Cohorts—Institution Data
+## 4. Data Sources  
+- [College Scorecard Earnings Data](https://collegescorecard.ed.gov/data/)  
+- [College Scorecard Institutional Data](https://collegescorecard.ed.gov/data/)  
+- U.S. Department of Education, 2022
 
-Most Recent Cohorts—Field-of-Study Data
-Both datasets from the U.S. Department of Education (College Scorecard).
+## 5. Folder Structure  
+STEM-major-salaries-analysis/
+│
+├── data/ # Raw data files (excluded in .gitignore)
+├── notebooks/ # Final notebook (.ipynb)
+├── plots/ # Generated plots
+├── src/ # Python scripts for data cleaning and analysis
+├── README.md
+├── LICENSE
+└── .gitignore
 
-These include tuition costs, student demographics, earnings outcomes, school characteristics, and program categories.
+## 6. Key Insights
 
-4. Methods & Workflow
+### A. ROI Distribution  
+ROI is heavily right-skewed. Most schools offer modest ROI, with a small group delivering very high value.
 
-Loaded institutional and earnings datasets
+### B. Top 20 In-State ROI Schools  
+Mostly public STEM-oriented universities with low tuition and strong wage outcomes. Affordability + technical majors drives high ROI.
 
-Cleaned missing values and converted numeric columns
+### C. Top 20 Out-of-State ROI Schools  
+ROI drops sharply for non-residents. Only a few elite public schools remain competitive for out-of-state students.
 
-Removed schools with unrealistic tuition (TUITIONFEE_IN > 3000)
+### D. ROI by School Type  
+Public schools have the strongest average ROI. Private nonprofits show wide variability. For-profit colleges consistently underperform.
 
-Calculated ROI for in-state and out-of-state students
+### E. Male vs Female Earnings Gap  
+Males earn more than females at nearly all institutions. The difference is persistent and sizable.
 
-Extracted STEM-related programs from the field-of-study file
+### F. Family Income Group Earnings  
+Higher-income families earn more after graduation, even at the same schools. Socioeconomic background significantly affects outcomes.
 
-Tagged each school as STEM or non-STEM based on UNITID match
+### G. ROI by State  
+States with strong technology ecosystems (CA, MA, TX) show the highest ROI. States with many smaller private colleges show weaker results.
 
-Created all ROI-related visualizations
+### H. STEM vs Non-STEM School Earnings  
+STEM-heavy institutions deliver substantially higher early-career earnings. The gap is large and consistent.
 
-Wrote insights summarizing each visualization’s conclusion
+### I. Tuition vs Earnings Relationship  
+In-state tuition has only a weak link to alumni earnings a decade later. An R² of 0.30 indicates tuition explains little of the variation in income across institutions.
 
-5. Visualization Insights
-6.1 ROI Distribution
+## 7. Future Improvements
 
-The distribution is heavily right-skewed. Most colleges deliver modest ROI, with a long tail of very high-performing schools. Educational value varies widely across institutions.
+-Add mid-career (10-year) ROI analysis
+-Incorporate program-level earnings instead of school-level
+-Build an interactive dashboard (Plotly/Streamlit)
+-Add machine learning to predict ROI based on school features
 
-6.2 Top 20 In-State ROI Schools
-
-High-ROI schools are mainly public STEM-focused universities with low tuition and strong wage outcomes. Affordability + technical programs drive high ROI.
-
-6.3 Top 20 Out-of-State ROI Schools
-
-ROI drops sharply for non-residents. Only a few elite public universities provide strong out-of-state ROI. Most public schools are not cost-effective for out-of-state attendance.
-
-6.4 ROI by School Type (Control)
-
-Public schools offer the strongest average ROI. Private nonprofits show wide variability. For-profit institutions consistently underperform with the lowest ROI across the board.
-
-6.5 Male vs Female Earnings Gap
-
-Male median earnings exceed female earnings at nearly all institutions. The gap is persistent and substantial, indicating structural differences in labor-market outcomes.
-
-6.6 Family Income Group Earnings (INC1–INC3)
-
-Students from higher-income families consistently earn more after graduation, even within the same institutions. Socioeconomic background has strong influence on outcomes.
-
-6.7 ROI by State
-
-States with strong technical and economic ecosystems (CA, MA, TX) show higher average ROI. States with many small private colleges tend to show weaker ROI.
-
-6.8 STEM vs Non-STEM School Earnings
-
-STEM-dominant schools produce significantly higher early-career earnings. The gap between STEM and non-STEM institutions is large and consistent.
-
-6. How to Run This Project
-
-Clone the repository
-
-Install required Python packages:
-
-pip install pandas numpy matplotlib
-
-
-Place the College Scorecard CSV files into the /data folder
-
-Open the Jupyter Notebook in /notebooks/
-
-Run all cells in order to reproduce the analysis
-
-7. Repository Structure
-/data/
-    Institution.csv
-    FieldOfStudy.csv
-
-/notebooks/
-    ROI_Analysis.ipynb
-
-/plots/
-    roi_distribution.png
-    roi_by_state.png
-    gender_gap.png
-    stem_vs_nonstem.png
-
-/src/
-    data_cleaning.py
-    visualization.py
-
-README.md
-LICENSE (optional)
-
-8. Future Improvements
-
-Add mid-career (10-year) ROI analysis
-
-Incorporate program-level earnings instead of school-level
-
-Build an interactive dashboard (Plotly/Streamlit)
-
-Add machine learning to predict ROI based on school features
+## 8. License  
+This project is licensed under the MIT License.
